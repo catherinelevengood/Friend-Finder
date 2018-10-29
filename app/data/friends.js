@@ -1,0 +1,6 @@
+var friends = [
+    {
+        "name": "Alina",
+        
+    }
+]
