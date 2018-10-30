@@ -30,8 +30,10 @@ router.post('/api/friends', function(req, res){
       console.log("New User Scores " + user.scores);
 
 var newSurveyScore = user.scores
+// holds score differences between users
 var scoresDiff = [];
-
+//save the index of the best match
+var bestMatch = 0;
 //pseudo code 
 //Need the difference in scores between Our new survey and someone elses to find a friend
 
@@ -45,12 +47,20 @@ for(var friendIndex = 0; friendIndex < friends.length; friendIndex ++) {
     
         difference = difference +( (Math.abs(parseInt(friends[friendIndex].scores[scoreIndex]) - parseInt(newSurveyScore[scoreIndex]))))
     }
+    //push score into score diffference array
     scoresDiff.push(difference)
     console.log(difference);
 }
+for(var i = 0; i < scoresDiff.length; i++){
+    if(scoresDiff[i] <= scoresDiff[bestMatch]){
+        bestMatch = i ;
 
+    }
+}
 
+var yourMatch = friends[bestMatch]
     
 friends.push(user)
+res.json(yourMatch);
 })
 module.exports = router
