@@ -15,3 +15,4 @@ router.post('/api/friends', function(req, res){
     
 
 })
+module.exports = router
