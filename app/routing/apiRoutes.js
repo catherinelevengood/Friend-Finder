@@ -37,7 +37,7 @@ var bestMatch = 0;
 //pseudo code 
 //Need the difference in scores between Our new survey and someone elses to find a friend
 
-// We to find the difference betwenen between te new survey results and the people who already have taken
+// We to find the difference betwenen  the new survey results and the people who already have taken
 for(var friendIndex = 0; friendIndex < friends.length; friendIndex ++) {
     var difference = 0 
     console.log("Saved friend " +  friends[friendIndex].scores);
@@ -51,6 +51,7 @@ for(var friendIndex = 0; friendIndex < friends.length; friendIndex ++) {
     scoresDiff.push(difference)
     console.log(difference);
 }
+//find the lowest score from all friends
 for(var i = 0; i < scoresDiff.length; i++){
     if(scoresDiff[i] <= scoresDiff[bestMatch]){
         bestMatch = i ;
