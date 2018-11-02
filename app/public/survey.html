@@ -26,7 +26,11 @@
         <hr>
         <h3>About You</h3>
         <h4>Name (Required)</h4>
+        <input type="text" id="name" class="form-control" required>
+
+        <h4>Link to Photo Image (Required)</h4>
         <input type="text" id="photo" class="form-control" required>
+       
 
         <hr>
 
@@ -194,12 +198,13 @@
         ".chosen-select-width": {
             width: "95%"
         }
-    },
-    for (var selector in config) {
-        $(selector).chosen(config[selector]);
-
     }
+    
+    //for (var selector in config) {
+        //$(selector).chosen(config[selector]);
 
+    //}
+$(document).ready(function() {
         $("#submit").on("click", function(event){
             event.preventDefault();
 
@@ -215,7 +220,7 @@
                 
                 $(".chosen-select").each(function() {
                     
-                    if ($(this.val() === "") {
+                    if ($(this).val() === "") {
                         isValid = false;
                         
                         }
@@ -240,23 +245,23 @@
                             $("#q9").val(),
                             $("#q10").val()
                         ]
-                        };
+                    }
                         $.post("/api/friends", newFriend, function(data){
 
                             //Grab the result from the AJAx post so that the best match name and photo are displayed.
-                            $("match-name").text(data.name);
-                            $("#match-img").attr("scr", data.photo);
+                            $("#name").text(data.name);
+                            $("#photo").attr("scr", data.photo);
 
-                            $//Show the modal with the best match
-                            $("#result-modal").modal("toggle");
+                            //Show the modal with the best match
+                            $("#results-modal").modal();
                             
-                            });
+                            })
                             } else {
                                 alert("Please fill out all fields before submitting!")
                             }
                     });
-
-</script>
+});
+    </script>
     
 
 </body>
