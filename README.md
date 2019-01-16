@@ -9,8 +9,8 @@ The app will then display the name and picture of the user with the best overall
 
 Technology
 
-HTML
-Javascript
-jQuery
-Node.js
-Express.js,
+HTML,
+Javascript,
+jQuery,
+Node.js,
+Express.js
